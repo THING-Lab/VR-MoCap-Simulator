@@ -11,13 +11,28 @@
       <a-assets>
         <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
         <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+        <img id="ballTexture" src="img/football_texture.png" crossorigin="anonymous">
+        <img id="netTexture" src="img/net_texture.jpg" crossorigin="anonymous">
       </a-assets>
 
+      <a-camera position="0 5 5"
+        animation="property: position; to: 5 5 0; dur: 10000; easing: linear"
+        animation__1="property: rotation; to: 0 45 0; dur: 10000;">
+        <a-cursor color="#FF0000">
+      </a-camera>
+
       <!-- Primitives. -->
-      <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.35 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.85 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 .1 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sphere
+        position="0 0.5 -5"
+        radius="0.5"
+        rotation="0 0 0"
+        color="#FFFFFF"
+        src = "#ballTexture"
+        animation="property: rotation; to: 0 360 0; dur: 10000;"
+        animation__mouseenter="property: components.material.material.color; type: color; to: red; startEvents: mouseenter; dur: 500";
+        animation__mouseleave="property: components.material.material.color; type: color; to: white; startEvents: mouseleave; dur: 500";>
+      </a-sphere>
+      <a-plane position="0 .1 -4" rotation="-90 0 0" width="25" height="25" color="#2BC8A4"></a-plane>
 
       <!-- Background sky. -->
       <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
@@ -30,4 +45,17 @@
       <a-entity hand-controls="hand: right"></a-entity>
     </a-scene>
   </body>
+  <script>
+
+  var scene = document.querySelector('a-scene');
+  var box = document.createElement('a-box');
+  box.setAttribute('color', 'yellow');
+  box.setAttribute('height', '12.5');
+  box.setAttribute('width', '15');
+  box.setAttribute('depth', '1.75');
+  box.setAttribute('position', '0 0 -12.5');
+  box.setAttribute('src', '#netTexture');
+  scene.appendChild(box);
+
+  </script>
 </html>

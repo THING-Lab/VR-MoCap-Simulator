@@ -1,6 +1,6 @@
 # node modules
-/vadapav_scenes/node_modules
-/vadapav_scenes/package-lock.json
+/vadapav_scene/node_modules
+/vadapav_scene/package-lock.json
 
 # Mac
 **/.DS_Store

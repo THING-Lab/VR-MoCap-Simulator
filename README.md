@@ -1,5 +1,9 @@
 # VR-MoCap-Simulator
-This is a node.js server + A-Frame application that aims to simulate the MoCap arena by overriding and hard-coding things!
+This is a node.js server + A-Frame application that aims to work with the MoCap arena!
+
+Working overview!
+
+![Overview Plot](overview_image.jpg)
 
 # Requirements
 
